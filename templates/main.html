@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mai.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Stock Price Prediction</h1>
+            <form id="predictionForm">
+                <label for="date">Chọn ngày:</label>
+                <select id="date" name="date">
+                    <option value="2024-05-01">1/5/2024</option>
+                    <option value="2024-05-02">2/5/2024</option>
+                    <option value="2024-05-03">3/5/2024</option>
+                    <option value="2024-05-06">6/5/2024</option>
+                    <option value="2024-05-07">7/5/2024</option>
+                    <option value="2024-05-08">8/5/2024</option>
+                    <option value="2024-05-09">9/5/2024</option>
+                    <option value="2024-05-10">10/5/2024</option>
+                    <option value="2024-05-13">13/5/2024</option>
+                    <option value="2024-05-14">14/5/2024</option>
+                    <option value="2024-05-15">15/5/2024</option>
+                    <option value="2024-05-16">16/5/2024</option>
+                    <option value="2024-05-17">17/5/2024</option>
+                    <option value="2024-05-20">20/5/2024</option>
+                    <option value="2024-05-21">21/5/2024</option>
+                    <option value="2024-05-22">22/5/2024</option>
+                    <option value="2024-05-23">23/5/2024</option>
+                    <option value="2024-05-24">24/5/2024</option>
+                    <option value="2024-05-28">28/5/2024</option>
+                    <option value="2024-05-29">29/5/2024</option>
+                    <option value="2024-05-30">30/5/2024</option>
+                </select>
+                <label for="model">Chọn mô hình:</label>
+                <select id="model" name="model">
+                    <option value="lstm_1layer_econ">1-layer LSTM with Economic Data</option>
+                    <option value="lstm_1layer_main">1-layer LSTM with Main Data</option>
+                    <option value="lstm_1layer_tech">1-layer LSTM with Technical Data</option>
+                    <option value="lstm_2layer_econ">2-layer LSTM with Economic Data</option>
+                    <option value="lstm_2layer_main">2-layer LSTM with Main Data</option>
+                    <option value="lstm_2layer_tech">2-layer LSTM with Technical Data</option>
+                    <option value="lstm_bi_econ">BiLSTM with Economic Data</option>
+                    <option value="lstm_bi_main">BiLSTM with Main Data</option>
+                    <option value="lstm_bi_tech">BiLSTM with Technical Data</option>
+                    <option value="var_main">VAR with Main Data</option>
+                    <option value="var_tech">VAR with Technical Data</option>
+                    <option value="var_econ">VAR with Economic Data</option>
+                    <option value="trans_main">Transformer with Main Data</option>
+                    <option value="trans_tech">Transformer with Technical Data</option>
+                    <option value="trans_econ">Transformer with Economic Data</option>
+                </select>
+                <button type="submit">Dự đoán</button>
+            </form>
+            <div id="result"></div>
+        </div>
+        <div class="image-section">
+            <img id="modelImage" src="static\default_img .png" alt="Stock Prediction" />
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='min.js') }}"></script>
+</body>
+</html>
+<!-- {{ url_for('static',filename='default_img.png') }} -->
